@@ -1,38 +1,41 @@
-# Экспорт: папка Windows, .exe, Android
+# Export: Windows folder, .exe, Android
 
-Кнопка **«Экспорт»** на странице проекта открывает окно экспорта. Выберите
-формат, при необходимости задайте имя exe и нажмите «Экспортировать» —
-по умолчанию сборка сохраняется на **Рабочий стол**.
+🌐 Русский: [Экспорт (RU)](ru/export.md)
 
-Во время сборки видны две шкалы: общий процент и текущий этап
-(подготовка → копирование → движок → иконка → сборка → финализация).
-Повторный экспорт в ту же папку безопасно обновляет её, если папка создана
-движком; чужие папки не перезаписываются.
+The **"Export"** button on the project page opens the export window. Pick a
+format, set the exe name if needed, and click "Export" — by default the build is
+saved to the **Desktop**.
 
-## Папка Windows
+During the build you see two bars: the overall percentage and the current stage
+(preparation → copying → engine → icon → build → finalization). Exporting again
+to the same folder safely updates it, if the folder was created by the engine;
+foreign folders are never overwritten.
 
-Самодостаточная папка: проект + встроенный движок + Play.bat + README.
-Папку можно заархивировать и передать кому угодно — у получателя не должно
-быть установленного Python.
+## Windows folder
 
-## .exe для Windows
+A self-contained folder: project + built-in engine + Play.bat + README. The
+folder can be zipped and handed to anyone — the recipient doesn't need Python
+installed.
 
-- Задайте **имя исполняемого файла** латиницей (например, `StarCatcher`) —
-  оно станет именем exe и окна.
-- Получается один самодостаточный файл с иконкой проекта.
-- `project.json` кладётся рядом с exe: игру можно докрутить, не пересобирая.
+## Windows .exe
+
+- Set the **executable name** in Latin characters (for example, `StarCatcher`) —
+  it becomes the name of the exe and of the window.
+- The result is a single self-contained file with the project icon.
+- `project.json` is placed next to the exe: the game can be tweaked without
+  rebuilding.
 
 ## Android
 
-1. Выберите формат **Android** и прочитайте встроенную инструкцию.
-2. Два пути сборки:
-   - **Локально**: WSL2/Linux + buildozer (движок подготовит `buildozer.spec`);
-   - **В облаке**: движок положит в папку готовый workflow для GitHub Actions —
-     соберите APK, не устанавливая ничего.
-3. Ориентация экрана задаётся в свойствах проекта; размер окна для Windows
-   выбирает агент под задачу.
+1. Pick the **Android** format and read the built-in instructions.
+2. Two build paths:
+   - **Locally**: WSL2/Linux + buildozer (the engine prepares `buildozer.spec`);
+   - **In the cloud**: the engine puts a ready GitHub Actions workflow into the
+     folder — build the APK without installing anything.
+3. Screen orientation is set in the project properties; the window size for
+   Windows is chosen by the agent per task.
 
-## После экспорта
+## After export
 
-Проверьте сборку на чистой машине (или у друга). Если что-то не так —
-опишите проблему ИИ-агенту прямо в проекте и экспортируйте снова.
+Test the build on a clean machine (or at a friend's). If something is wrong —
+describe the problem to the AI agent right in the project and export again.

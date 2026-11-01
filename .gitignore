@@ -1,8 +1,8 @@
-# Системный мусор
+# System junk
 Thumbs.db
 .DS_Store
 desktop.ini
 
-# Локальные заметки и черновики
+# Local notes and drafts
 *.tmp
 ~$*

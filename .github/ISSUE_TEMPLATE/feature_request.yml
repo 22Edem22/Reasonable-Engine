@@ -1,49 +1,50 @@
-name: "💡 Предложение (Feature request)"
-description: "Чего не хватает движку — идея с конкретным сценарием"
+name: "💡 Feature request"
+description: "What the engine is missing — an idea with a concrete scenario"
 labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
-        Опишите задачу, которую вы решаете, — конкретный сценарий ценнее абстрактной кнопки.
-        Статусы предложений: `question`, `accepted`, `planned`, `wontfix`.
+        Describe the task you are trying to solve — a concrete scenario is worth
+        more than an abstract button.
+        Suggestion statuses: `question`, `accepted`, `planned`, `wontfix`.
   - type: textarea
     id: problem
     attributes:
-      label: Какая задача не решается
-      description: "Что вы делаете сейчас и в чём затык"
+      label: What task is left unsolved
+      description: "What you are doing now and where you get stuck"
     validations:
       required: true
   - type: textarea
     id: proposal
     attributes:
-      label: Предлагаемое решение
-      description: "Как это могло бы работать в редакторе"
+      label: Proposed solution
+      description: "How this could work in the editor"
     validations:
       required: true
   - type: dropdown
     id: area
     attributes:
-      label: К какой части движка относится
+      label: Which part of the engine this relates to
       options:
-        - ИИ-агент
-        - Уровни интерфейса / шаблоны
-        - Ассеты и генерация
-        - Экспорт
-        - Редактор (интерфейс)
-        - Документация
-        - Другое
+        - AI agent
+        - Interface levels / templates
+        - Assets and generation
+        - Export
+        - Editor (UI)
+        - Documentation
+        - Other
     validations:
       required: true
   - type: textarea
     id: alternatives
     attributes:
-      label: Обходные пути
-      description: "Как вы решаете задачу сейчас"
+      label: Workarounds
+      description: "How you solve the task today"
   - type: checkboxes
     id: checks
     attributes:
-      label: Подтверждение
+      label: Confirmation
       options:
-        - label: "Я проверил [FAQ](../blob/main/docs/faq.md) и существующие issues"
+        - label: "I checked the [FAQ](../blob/main/docs/faq.md) and existing issues"
           required: true

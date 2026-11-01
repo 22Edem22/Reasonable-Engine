@@ -5,140 +5,148 @@
 <h1 align="center">Reasonable Engine 1</h1>
 
 <p align="center">
-  <b>Разумный движок для смелых идей.</b><br>
-  Редактор игр и приложений с ИИ-агентом, который не подсказывает, а работает —
-  пишет код, генерирует спрайты, ведёт план и доводит проект до запуска.
+  <b>The reasonable engine for bold ideas.</b><br>
+  A game and application editor with an AI agent that doesn't just advise — it works:
+  writes code, generates sprites, keeps the plan on track, and carries your project
+  all the way to launch.
 </p>
 
 <p align="center">
-  <a href="#-скачивание">Скачать</a> ·
-  <a href="#-возможности">Возможности</a> ·
-  <a href="docs/getting-started.md">Начало работы</a> ·
+  🌐 English · <a href="README.ru.md">Русский</a>
+</p>
+
+<p align="center">
+  <a href="#-download">Download</a> ·
+  <a href="#-features">Features</a> ·
+  <a href="docs/getting-started.md">Getting Started</a> ·
   <a href="docs/faq.md">FAQ</a> ·
-  <a href="CHANGELOG.md">Изменения</a>
+  <a href="CHANGELOG.md">Changelog</a>
 </p>
 
 ---
 
-> **Закрытый исходный код.** Этот репозиторий — публичный дом Reasonable Engine:
-> документация, релизы и обратная связь. Сам редактор распространяется в виде
-> готового установщика; исходный код не публикуется (см. [LICENSE.txt](LICENSE.txt)).
+> **Closed source.** This repository is the public home of Reasonable Engine:
+> documentation, releases, and feedback. The editor itself is distributed as a
+> ready-made installer; the source code is not published (see [LICENSE.txt](LICENSE.txt)).
 
-## 📥 Скачивание
+## 📥 Download
 
-Актуальная сборка всегда здесь: **[Releases](../../releases/latest)** — скачайте
-`ReasonableEngine-Setup-RE-1.01.exe`, запустите и работайте. Установка простая:
-движок сам размещает редактор, портативный Python и рантайм, ничего дополнительно
-настраивать не нужно. Ваши проекты хранятся в папке `Projects` внутри установки и
-не удаляются при обновлении.
+The current build is always here: **[Releases](../../releases/latest)** — download
+`ReasonableEngine-Setup-RE-1.01.exe`, run it, and get to work. Installation is simple:
+the engine places the editor, a portable Python, and the runtime itself; there is
+nothing extra to configure. Your projects are stored in the `Projects` folder inside
+the installation and are not removed on update.
 
 | | |
 |---|---|
-| Платформы | Windows 10/11 (x64), экспорт на Android |
-| Языки интерфейса | Русский |
-| Размер установщика | ~165 МБ |
-| Лицензия | Проприетарная, бесплатное использование ([LICENSE.txt](LICENSE.txt)) |
+| Platforms | Windows 10/11 (x64), export to Android |
+| UI language | Russian |
+| Installer size | ~165 MB |
+| License | Proprietary, free to use ([LICENSE.txt](LICENSE.txt)) |
 
-## ✨ Возможности
+## ✨ Features
 
-### ИИ-агент, который доводит до результата
-- Опишите задачу обычными словами — агент изучит проект, составит план, будет
-  выполнять его по шагам и **сам проверять запуск** после каждого крупного этапа.
-- Без лимита шагов: агент работает до результата, а не до «извините, шаги кончились».
-- История общения сохраняется по каждому проекту — можно вернуться через неделю
-  и продолжить с того же места.
-- Живой прогресс: план задач, процент готовности и лента событий обновляются в
-  реальном времени.
+### An AI agent that carries things to the result
+- Describe the task in plain words — the agent will study the project, draw up a
+  plan, execute it step by step, and **verify the launch itself** after every major
+  milestone.
+- No step limit: the agent works until there is a result, not until "sorry, the
+  steps have run out".
+- Conversation history is kept per project — come back a week later and continue
+  right where you left off.
+- Live progress: the task plan, completion percentage, and event feed update in
+  real time.
 
-### Уровни интерфейса
-При создании проекта выберите один или несколько уровней — проект получит только
-нужные инструменты и шаблоны, без лишнего:
+### Interface levels
+When creating a project, pick one or more levels — the project receives only the
+tools and templates it needs, with nothing extra:
 
-| Уровень | Для чего | Технология |
+| Level | What it's for | Technology |
 |---|---|---|
-| **Простой** | Утилиты, формы, списки, «рабочие лошадки» | tkinter, обычные окна Windows |
-| **Стандартный** | Приложения и меню игр: панели, списки, прокрутка, вкладки | Готовые виджеты движка |
-| **Продвинутый** | Игры и насыщенная графика: сцены, камера, частицы, анимации | Свой рендер на pygame |
+| **Simple** | Utilities, forms, lists, workhorse apps | tkinter, plain Windows windows |
+| **Standard** | Apps and game menus: panels, lists, scrolling, tabs | Ready-made engine widgets |
+| **Advanced** | Games and rich graphics: scenes, camera, particles, animations | Custom renderer on pygame |
 
-### Ассеты без дизайнера
-Генерация спрайтов, фонов и иконки проекта по текстовому описанию —
-процедурно офлайн или через вашу модель изображений.
+### Assets without a designer
+Generate sprites, backgrounds, and the project icon from a text description —
+procedurally offline or through your own image model.
 
-### Экспорт
-- **Папка Windows** — самодостаточная папка с `Play.bat` и встроенным движком.
-- **.exe для Windows** — один исполняемый файл с иконкой и именем, которое задаёте вы.
-- **Android-пакет** — готовый `buildozer.spec`, инструкция, даже GitHub Actions
-  workflow, чтобы собрать APK прямо в облаке.
-- Экспорт по умолчанию идёт на **Рабочий стол**, каждый этап сборки виден
-  отдельной шкалой прогресса.
+### Export
+- **Windows folder** — a self-contained folder with `Play.bat` and the engine built in.
+- **Windows .exe** — a single executable with the icon and the name you choose.
+- **Android package** — a ready `buildozer.spec`, instructions, and even a GitHub
+  Actions workflow, so you can build the APK right in the cloud.
+- Export goes to the **Desktop** by default, and every build stage has its own
+  progress bar.
 
-### Заставка
-Перед каждым продуктом, созданным в Reasonable Engine, играет фирменная
-минималистичная заставка (как в Unity или Godot) — тёмный экран, логотип,
-полторы секунды. Она — часть движка и отключению не подлежит.
+### Splash screen
+Every product created in Reasonable Engine opens with the signature minimalist
+splash (like Unity or Godot): a dark screen, the logo, a second and a half. It is
+part of the engine and cannot be disabled.
 
-## 🖼 Скриншоты
+## 🖼 Screenshots
 
-| Приветствие | Обзор проекта |
+| Welcome | Project overview |
 |---|---|
-| ![Приветствие](assets/screenshots/welcome.png) | ![Обзор](assets/screenshots/overview.png) |
+| ![Welcome](assets/screenshots/welcome.png) | ![Overview](assets/screenshots/overview.png) |
 
-| ИИ-агент | Код |
+| AI agent | Code |
 |---|---|
-| ![Агент](assets/screenshots/agent.png) | ![Код](assets/screenshots/code.png) |
+| ![Agent](assets/screenshots/agent.png) | ![Code](assets/screenshots/code.png) |
 
-*Заставка: [splash.png](assets/screenshots/splash.png) · логотип: [assets/brand](assets/brand)*
+*Splash screen: [splash.png](assets/screenshots/splash.png) · logo: [assets/brand](assets/brand)*
 
-## 🔢 Система версий
+## 🔢 Versioning System
 
-Reasonable Engine использует **двухуровневую** нумерацию:
+Reasonable Engine uses **two-level** numbering:
 
-- **Поколение** — глобальная версия движка: *Reasonable Engine 1* (сокращённо
-  **RE 1**). Меняется, только когда движок претерпевает глобальное изменение:
-  новая архитектура, новый формат проектов, обратно несовместимые перемены.
-- **Релиз** — конкретная сборка внутри поколения: **RE-1.01**, **RE-1.02**,
+- **Generation** — the engine's global version: *Reasonable Engine 1* (short for
+  **RE 1**). It changes only when the engine undergoes a global shift: a new
+  architecture, a new project format, backward-incompatible changes.
+- **Release** — a specific build within a generation: **RE-1.01**, **RE-1.02**,
   **RE-1.03**…
 
-Правила:
+Rules:
 
-1. Релизы внутри поколения нумеруются **с .01**: первый релиз поколения —
-   RE-1.01, затем RE-1.02 и так далее. Версии вида «RE-2.00» **не существует**.
-2. Номера идут подряд и не перескакивают: после RE-1.09 будет RE-1.10,
-   после RE-1.99 — RE-1.100.
-3. При переходе к новому поколению счёт начинается заново: Reasonable Engine 2
-   начинается с RE-2.01, дальше RE-2.02…RE-2.12 и т.д.
-4. Поколение никогда не «откатывается»: Reasonable Engine 2 не может выпустить
-   релиз RE-1.xx, а RE 1 — релиз RE-2.xx.
-5. Текущий релиз указан в заголовке [CHANGELOG.md](CHANGELOG.md) и в окне
-   «О программе» редактора.
+1. Releases within a generation are numbered **starting with .01**: the first
+   release of a generation is RE-1.01, then RE-1.02, and so on. A version like
+   "RE-2.00" **does not exist**.
+2. Numbers go in order and never skip: after RE-1.09 comes RE-1.10, and after
+   RE-1.99 comes RE-1.100.
+3. When moving to a new generation, the count starts over: Reasonable Engine 2
+   begins with RE-2.01, then RE-2.02…RE-2.12, and so on.
+4. A generation never "rolls back": Reasonable Engine 2 cannot ship an RE-1.xx
+   release, and RE 1 cannot ship an RE-2.xx release.
+5. The current release is shown in the header of [CHANGELOG.md](CHANGELOG.md) and
+   in the editor's "About" window.
 
-## 🖥 Системные требования
+## 🖥 System Requirements
 
-- Windows 10/11 (x64); для сборки Android-пакетов дополнительно Linux/WSL2 или GitHub Actions
-- 4 ГБ ОЗУ (8 ГБ для комфортной работы ИИ-агента)
-- ~700 МБ на диске для установки + место под проекты
-- Видеокарта с поддержкой OpenGL 2.1 (любая за последние 15 лет)
-- Интернет нужен только для облачных ИИ-провайдеров и скачивания установщика;
-  процедурные ассеты и локальные модели работают офлайн
+- Windows 10/11 (x64); building Android packages additionally requires Linux/WSL2 or GitHub Actions
+- 4 GB RAM (8 GB for comfortable AI agent work)
+- ~700 MB of disk space for the installation + room for projects
+- A GPU with OpenGL 2.1 support (any from the last 15 years)
+- The internet is only needed for cloud AI providers and downloading the installer;
+  procedural assets and local models work offline
 
-## 📚 Документация
+## 📚 Documentation
 
-| Документ | О чём |
+| Document | What it covers |
 |---|---|
-| [Начало работы](docs/getting-started.md) | Установка, первый проект, первый запуск |
-| [ИИ-агент](docs/agent.md) | Задачи, план, прогресс, история, внешний агент |
-| [Экспорт](docs/export.md) | Папка Windows, .exe, Android |
-| [FAQ](docs/faq.md) | Частые вопросы и ответы |
+| [Getting Started](docs/getting-started.md) | Installation, first project, first launch |
+| [AI Agent](docs/agent.md) | Tasks, plan, progress, history, external agent |
+| [Export](docs/export.md) | Windows folder, .exe, Android |
+| [FAQ](docs/faq.md) | Frequently asked questions and answers |
 
-## 🤝 Участие
+## 🤝 Contributing
 
-Проект закрытый, но идеи и отчёты об ошибках — топливо развития: см.
-[CONTRIBUTING.md](CONTRIBUTING.md). Шаблоны — в разделе Issues.
+The project is closed, but ideas and bug reports are the fuel of its development:
+see [CONTRIBUTING.md](CONTRIBUTING.md). Templates are in the Issues section.
 
-## 📄 Лицензия
+## 📄 License
 
-Проприетарная лицензия: [LICENSE.txt](LICENSE.txt). Коротко: пользоваться и
-создавать можно свободно и бесплатно, включая коммерческие проекты; исходный
-код закрыт, заставка и фирменные элементы — часть движка.
+Proprietary license: [LICENSE.txt](LICENSE.txt). In short: you may use the engine
+and create with it freely and free of charge, including for commercial projects;
+the source code stays closed, and the splash screen and branding are part of the engine.
 
-© 2026 Правообладатель Reasonable Engine. Все права защищены.
+© 2026 The Reasonable Engine copyright holder. All rights reserved.

@@ -1,54 +1,55 @@
-# Участие в развитии Reasonable Engine
+# Contributing to Reasonable Engine
 
-Reasonable Engine — закрытый проект: исходный код не публикуется, поэтому
-обычные pull request'ы к коду не принимаются. Но развитие движка во многом
-определяют именно пользователи — баг-репорты, идеи и сценарии использования.
+🌐 English · [Русский](CONTRIBUTING.ru.md)
 
-## Как помочь проекту
+Reasonable Engine is a closed project: the source code is not published, so
+regular pull requests to the code are not accepted. But users largely drive the
+engine's development — bug reports, ideas, and usage scenarios.
 
-### 1. Сообщить об ошибке
-1. Откройте [Issues](../../issues) и проверьте, не сообщалось ли уже о такой
-   проблеме (в том числе в закрытых).
-2. Если нет — создайте новый issue по шаблону **«Ошибка» (Bug report)**.
-3. Заполните поля: что делали, что ожидали, что произошло, версию движка
-   (окно «О программе» или `python -m reasonable --version`).
-4. Приложите детали: текст ошибки из консоли, скриншот, шаги воспроизведения.
-   Чем точнее шаги — тем быстрее исправление.
+## How to help the project
 
-### 2. Предложить улучшение
-1. Создайте issue по шаблону **«Предложение» (Feature request)**.
-2. Опишите: какую задачу вы решаете сейчас и чего вам не хватает. Конкретный
-   сценарий ценнее абстрактного «сделайте кнопку».
-3. Мы помечаем предложения: `accepted` (взято в работу), `planned`
-   (запланировано в релиз), `question` (нужны уточнения), `wontfix`.
+### 1. Report a bug
+1. Open [Issues](../../issues) and check whether the problem has already been
+   reported (including closed issues).
+2. If not — create a new issue using the **Bug report** template.
+3. Fill in the fields: what you did, what you expected, what happened, and the
+   engine version (the "About" window or `python -m reasonable --version`).
+4. Attach the details: the error text from the console, a screenshot, and
+   reproduction steps. The more precise the steps, the faster the fix.
 
-### 3. Участвовать в обсуждениях
-- Вопросы по использованию — в [Discussions](../../discussions) или через
-  шаблон «Вопрос».
-- Отвечать другим пользователям в Discussions — тоже вклад: опыт владельцев
-  проектов бесценен.
+### 2. Suggest an improvement
+1. Create an issue using the **Feature request** template.
+2. Describe the task you are solving right now and what you are missing. A
+   concrete scenario is worth more than an abstract "add a button".
+3. We tag suggestions: `accepted` (taken into work), `planned`
+   (scheduled for a release), `question` (needs clarification), `wontfix`.
 
-## Правила хорошего репорта
+### 3. Join the discussions
+- Usage questions go to [Discussions](../../discussions) or via the Questions link.
+- Answering other users in Discussions is also a contribution: the experience of
+  project owners is invaluable.
 
-- **Один issue — одна проблема.** Не смешивайте несколько ошибок в одном.
-- Указывайте **версию релиза** (RE-1.01, RE-1.02…), ОС и, если ошибка в
-  созданной программе, — тип проекта и уровень интерфейса.
-- Прикладывайте логи: редактор пишет их рядом с настройками, а ошибки запуска
-  проекта видны в консоли проекта (раздел «Обзор» → консоль запуска).
-- Не прикладывайте API-ключи и личные данные — публикуемый текст увидят все.
+## Rules for a good report
 
-## Что НЕ принимается
+- **One issue — one problem.** Don't mix several bugs in one.
+- State the **release version** (RE-1.01, RE-1.02…), the OS, and, if the bug is
+  in a generated program, the project type and interface level.
+- Attach logs: the editor writes them next to its settings, and project launch
+  errors are visible in the project console ("Overview" section → launch console).
+- Don't attach API keys or personal data — everything you post is visible to everyone.
 
-- Попытки получить или обсудить исходный код движка (он закрыт; см. LICENSE.txt).
-- Обход заставки и фирменных элементов — это часть движка.
-- Запросы на «взлом», пиратство и обход лицензии.
+## What is NOT accepted
 
-## Как устроен цикл выпуска
+- Attempts to obtain or discuss the engine's source code (it is closed; see LICENSE.txt).
+- Bypassing the splash screen and branding elements — they are part of the engine.
+- Requests for "cracks", piracy, or license circumvention.
 
-- Релизы нумеруются RE-1.01, RE-1.02, …; глобальное поколение — Reasonable
-  Engine 1, 2 и т.д. Подробно: раздел «Система версий» в [README.md](README.md).
-- Исправления и принятые предложения попадают в следующий релиз; в
-  [CHANGELOG.md](CHANGELOG.md) отмечается, что именно вошло.
-- Существенные предложения могут попасть в предрелиз — слушайте Discussions.
+## How the release cycle works
 
-Спасибо, что делаете Reasonable Engine лучше!
+- Releases are numbered RE-1.01, RE-1.02, …; the global generation is Reasonable
+  Engine 1, 2, etc. Details: the "Versioning System" section in [README.md](README.md).
+- Fixes and accepted suggestions land in the next release; [CHANGELOG.md](CHANGELOG.md)
+  notes exactly what was included.
+- Significant suggestions may land in a pre-release — keep an eye on Discussions.
+
+Thank you for making Reasonable Engine better!

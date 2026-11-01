@@ -1,71 +1,75 @@
-# Частые вопросы (FAQ)
+# Frequently Asked Questions (FAQ)
 
-## Установка и обновления
+🌐 Русский: [Частые вопросы (RU)](ru/faq.md)
 
-**Установщик просит что-то доустановить?**
-Нет. Редактор несёт с собой портативный Python и все зависимости.
+## Installation and updates
 
-**Сохранятся ли мои проекты при обновлении?**
-Да, папка `Projects` не трогается установщиком. Тем не менее делайте резервные
-копии важных проектов — это копирование папки.
+**Does the installer ask to install anything else?**
+No. The editor ships with a portable Python and all dependencies.
 
-**Где хранятся проекты?**
-Внутри установки: `...\Reasonable Engine\Projects\<имя проекта>`. Внутри —
-`project.json` (манифест), `main.py`, ассеты, план прогресса, история чата.
+**Will my projects survive an update?**
+Yes, the `Projects` folder is not touched by the installer. Still, keep backups
+of important projects — it's copying a folder.
 
-## Заставка
+**Where are projects stored?**
+Inside the installation: `...\Reasonable Engine\Projects\<project name>`. Inside:
+`project.json` (the manifest), `main.py`, assets, the progress plan, and the chat
+history.
 
-**Можно убрать заставку перед играми?**
-Нет. Заставка Reasonable Engine — фирменная часть движка, как у Unity или
-Godot, и отключению не подлежит. Играет ~2 секунды и завершается сама.
+## Splash screen
 
-**Заставка зависла?**
-Она длится пару секунд и закрывается сама. Если окно не закрылось — просто
-подождите ещё немного; принудительное закрытие не вредит проекту.
+**Can the splash screen before games be removed?**
+No. The Reasonable Engine splash screen is a signature part of the engine, like
+in Unity or Godot, and cannot be disabled. It plays for ~2 seconds and closes by
+itself.
 
-## ИИ-агент
+**Is the splash screen stuck?**
+It lasts a couple of seconds and closes by itself. If the window hasn't closed —
+just wait a little longer; force-closing does not harm the project.
 
-**Нужен ли интернет?**
-Для облачных моделей (Anthropic, OpenAI, OpenRouter, DeepSeek…) — да. Локальные
-модели (Ollama, LM Studio) и процедурная генерация ассетов работают офлайн.
+## AI agent
 
-**Где мой API-ключ?**
-Только на вашем компьютере, в настройках Reasonable Engine. Мы его не получаем
-и не храним.
+**Is the internet required?**
+For cloud models (Anthropic, OpenAI, OpenRouter, DeepSeek…) — yes. Local models
+(Ollama, LM Studio) and procedural asset generation work offline.
 
-**Агент остановился, а задача не доделана?**
-Напишите ему: «Продолжай». Агент работает без лимита шагов; если он
-остановился — он объяснил причину в чате (например, повторял одно и то же
-действие). Опишите, что именно не получилось.
+**Where is my API key?**
+Only on your computer, in the Reasonable Engine settings. We never receive or
+store it.
 
-**Агент всё испортил, как откатить?**
-«История версий» на странице проекта — снимки перед работой агента. Верните
-нужный одним кликом.
+**The agent stopped, but the task isn't finished?**
+Write to it: "Continue". The agent works without a step limit; if it stopped, it
+explained the reason in the chat (for example, it kept repeating the same
+action). Describe exactly what didn't work.
 
-**Почему агент не настраивает размер окна?**
-Размер окна выбирает агент под задачу — в интерфейсе редактора этих настроек
-нет намеренно.
+**The agent messed everything up — how do I roll back?**
+"Version history" on the project page — snapshots taken before the agent's work.
+Restore the one you need with a single click.
 
-## Экспорт
+**Why doesn't the agent let me set the window size?**
+The window size is chosen by the agent per task — these settings are absent from
+the editor UI on purpose.
 
-**Куда сохраняется сборка?**
-По умолчанию на Рабочий стол. Путь можно изменить кнопкой «Изменить…».
+## Export
 
-**В exe открывается второе окно «Reasonable Engine»?**
-Не должно. Убедитесь, что экспортируете релизом RE-1.01 или новее — там
-лишнее окно исключено.
+**Where is the build saved?**
+To the Desktop by default. The path can be changed with the "Change…" button.
 
-**Кому можно передавать собранные игры?**
-Кому угодно — это ваши проекты. Передавать сам движок/установщик можно только
-ссылкой на официальную страницу загрузки (см. LICENSE.txt).
+**Does a second "Reasonable Engine" window open from the exe?**
+It shouldn't. Make sure you export with release RE-1.01 or newer — the extra
+window is excluded there.
 
-## Версии
+**Who can I hand my built games to?**
+Anyone — they are your projects. The engine/installer itself may only be shared
+as a link to the official download page (see LICENSE.txt).
 
-**Что значит RE-1.01?**
-Поколение 1, релиз 01. Релизы идут подряд (RE-1.02, RE-1.03…); версии вида
-«RE-2.00» не существует — новое поколение начинается с RE-2.01. Подробно:
-раздел «Система версий» в [README](../README.md#-система-версий).
+## Versions
 
-**Где посмотреть мою версию?**
-Окно «О программе» в редакторе или `python -m reasonable --version` в папке
-установки.
+**What does RE-1.01 mean?**
+Generation 1, release 01. Releases go in order (RE-1.02, RE-1.03…); versions
+like "RE-2.00" don't exist — a new generation starts with RE-2.01. Details: the
+"Versioning System" section in the [README](../README.md#-versioning-system).
+
+**Where can I see my version?**
+The "About" window in the editor or `python -m reasonable --version` in the
+installation folder.

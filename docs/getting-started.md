@@ -1,64 +1,66 @@
-# Начало работы
+# Getting Started
 
-## Установка
+🌐 Русский: [Начало работы (RU)](ru/getting-started.md)
 
-1. Скачайте `ReasonableEngine-Setup-RE-1.01.exe` со страницы
-   [Releases](../../releases/latest).
-2. Запустите установщик. Он сам установит редактор, портативный Python и
-   рантайм — ничего доустанавливать не нужно.
-3. Запустите **Reasonable Engine** из меню «Пуск» или с ярлыка на рабочем столе.
+## Installation
 
-Ваши проекты живут в папке `Projects` внутри установки. При обновлении движка
-они сохраняются, но держите резервные копии важных проектов — просто скопируйте
-папку проекта в надёжное место.
+1. Download `ReasonableEngine-Setup-RE-1.01.exe` from the
+   [Releases](../../releases/latest) page.
+2. Run the installer. It will install the editor, a portable Python, and the
+   runtime itself — there is nothing extra to install.
+3. Launch **Reasonable Engine** from the Start menu or the desktop shortcut.
 
-## Первый проект
+Your projects live in the `Projects` folder inside the installation. They are
+preserved when the engine is updated, but keep backups of important projects —
+just copy the project folder to a safe place.
 
-1. На экране приветствия нажмите **«Создать проект»**.
-2. Опишите идею своими словами: например, «Космический кот собирает звёзды и
-   убегает от слизней».
-3. Выберите, кто работает над проектом:
-   - **Встроенный ИИ-агент** — пишет код прямо в редакторе (нужен ключ
-     провайдера или локальная модель);
-   - **Внешний агент** — вы открываете папку проекта в Claude Code, Cursor,
-     Codex CLI или другом инструменте, редактор показывает прогресс.
-4. Выберите **уровни интерфейса** (можно несколько):
-   - **Простой (tkinter)** — обычные окна Windows: утилиты, формы, списки;
-   - **Стандартный (движок)** — готовые виджеты: панели, списки, прокрутка;
-   - **Продвинутый (сцены)** — своя графика, камера, частицы: для игр.
-5. Задайте **название проекта латиницей** — оно станет именем папки и файлов
-   (например, `Star Catcher`).
-6. Нажмите **«Создать»** — проект будет сгенерирован за несколько секунд:
-   шаблон, иконка, инструкции для агента, план прогресса.
+## Your first project
 
-## Первый запуск
+1. On the welcome screen, click **"Create project"**.
+2. Describe the idea in your own words: for example, "A space cat collects stars
+   and runs away from slugs".
+3. Choose who works on the project:
+   - **Built-in AI agent** — writes code right in the editor (requires a provider
+     key or a local model);
+   - **External agent** — you open the project folder in Claude Code, Cursor,
+     Codex CLI, or another tool, and the editor shows the progress.
+4. Choose the **interface levels** (several are allowed):
+   - **Simple (tkinter)** — plain Windows windows: utilities, forms, lists;
+   - **Standard (engine)** — ready-made widgets: panels, lists, scrolling;
+   - **Advanced (scenes)** — custom graphics, camera, particles: for games.
+5. Set the **project name in Latin characters** — it will become the name of the
+   folder and files (for example, `Star Catcher`).
+6. Click **"Create"** — the project will be generated in a few seconds:
+   template, icon, agent instructions, and a progress plan.
 
-- На странице проекта нажмите **«Запустить»** (или `run.bat` в папке проекта).
-- Перед программой проиграется заставка Reasonable Engine (~2 секунды) — это
-  часть движка.
-- Игра/приложение откроется в отдельном окне. Ошибки запуска появятся в
-  консоли на странице проекта.
+## Your first launch
 
-## Первая задача агенту
+- On the project page, click **"Run"** (or `run.bat` in the project folder).
+- The Reasonable Engine splash screen will play before the program (~2 seconds) —
+  it is part of the engine.
+- The game/app opens in a separate window. Launch errors appear in the console
+  on the project page.
 
-1. Откройте раздел **«ИИ-агент»**.
-2. Напишите задачу обычными словами: «Собери рабочий вертикальный срез: игрок,
-   звёзды, счёт и проигрыш» — или выберите готовую подсказку.
-3. Агент изучит проект, составит план и начнёт работать: план, процент и
-   изменения файлов видны в реальном времени.
-4. После работы агента нажмите **«Запустить»** и посмотрите результат.
-   Что-то не так — опишите это агенту: он исправит.
+## Your first agent task
 
-## Настройка ИИ-провайдера
+1. Open the **"AI Agent"** section.
+2. Write the task in plain words: "Assemble a working vertical slice: player,
+   stars, score, and game over" — or pick one of the ready-made hints.
+3. The agent will study the project, draw up a plan, and start working: the plan,
+   percentage, and file changes are visible in real time.
+4. After the agent finishes, click **"Run"** and look at the result. Something is
+   off — describe it to the agent: it will fix it.
 
-1. **Файл → Настройки → Провайдер**.
-2. Выберите провайдера и модель, вставьте API-ключ (хранится только на вашем
-   компьютере).
-3. Без ключа и без интернета доступны локальные модели (Ollama, LM Studio) и
-   процедурная генерация ассетов.
+## Setting up an AI provider
 
-## Что дальше
+1. **File → Settings → Provider**.
+2. Choose the provider and model, paste the API key (it is stored only on your
+   computer).
+3. Without a key and without the internet, local models (Ollama, LM Studio) and
+   procedural asset generation are available.
 
-- [ИИ-агент: задачи, план, прогресс, внешний агент](agent.md)
-- [Экспорт: папка Windows, .exe, Android](export.md)
-- [Частые вопросы](faq.md)
+## What's next
+
+- [AI Agent: tasks, plan, progress, external agent](agent.md)
+- [Export: Windows folder, .exe, Android](export.md)
+- [Frequently asked questions](faq.md)

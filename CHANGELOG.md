@@ -1,57 +1,60 @@
-# Журнал изменений Reasonable Engine
+# Reasonable Engine Changelog
 
-Формат версий: **RE-<поколение>.<релиз>** — например RE-1.01, RE-1.02.
-Поколение меняется только при глобальном обновлении движка (Reasonable Engine 1 → 2).
-Первый релиз поколения — всегда .01; версии вида «RE-2.00» не существует.
+🌐 English · [Русский](CHANGELOG.ru.md)
+
+Version format: **RE-<generation>.<release>** — for example RE-1.01, RE-1.02.
+The generation changes only on a major engine overhaul (Reasonable Engine 1 → 2).
+The first release of a generation is always .01; versions like "RE-2.00" do not exist.
 
 ## [RE-1.01] — 2026-11-01
 
-Первый публичный релиз Reasonable Engine 1.
+The first public release of Reasonable Engine 1.
 
-### Добавлено
-- **Уровни интерфейса** при создании проекта: Простой (tkinter), Стандартный
-  (виджеты движка), Продвинутый (сцены и графика). Мультивыбор; проект получает
-  только соответствующие шаблон, ассеты и навыки агента — без лишнего.
-- **История чата** с ИИ-агентом сохраняется по каждому проекту и
-  восстанавливается при открытии (`.reasonable/chat.json`).
-- **Безлимитная работа агента**: лимит в 60 шагов убран; агент работает до
-  результата. Введена защита от зацикливания: шесть одинаковых действий подряд
-  останавливают агента с понятным сообщением.
-- **Живой прогресс без нулей**: процент готовности автоматически выводится из
-  выполненных задач плана, если агент не сообщил его сам; единый процент во
-  всех панелях редактора.
-- **Экспорт с подробным прогрессом**: две шкалы — общий процент сборки и
-  текущий этап (подготовка → копирование → движок → иконка → сборка exe →
-  финализация). Экспорт по умолчанию сохраняется на **Рабочий стол**.
-- **Имя .exe задаётся при экспорте** (латиницей) с живой проверкой.
-- **Английское имя проекта** при создании (используется для папки и файлов).
-- **Конвертация проектов** (Windows ↔ Android) с выбором уровней интерфейса.
-- Кнопка **Экспорт** вынесена в первый ряд кнопок проекта.
-- Обзор проекта стал **панелью только для чтения**: план и процент показываются,
-  редактировать их из «Обзора» нельзя (это работа агента).
+### Added
+- **Interface levels** when creating a project: Simple (tkinter), Standard
+  (engine widgets), Advanced (scenes and graphics). Multi-select; the project
+  receives only the matching template, assets, and agent skills — nothing extra.
+- **Chat history** with the AI agent is saved per project and restored on reopen
+  (`.reasonable/chat.json`).
+- **Unlimited agent operation**: the 60-step limit has been removed; the agent
+  works until there is a result. Anti-loop protection added: six identical
+  actions in a row stop the agent with a clear message.
+- **Live progress without zeros**: the completion percentage is automatically
+  derived from the completed plan tasks when the agent doesn't report it itself;
+  a single percentage across all editor panels.
+- **Export with detailed progress**: two bars — the overall build percentage and
+  the current stage (preparation → copying → engine → icon → exe build →
+  finalization). Export is saved to the **Desktop** by default.
+- **The .exe name is set at export time** (Latin characters) with live validation.
+- **English project name** at creation (used for the folder and files).
+- **Project conversion** (Windows ↔ Android) with interface-level selection.
+- The **Export** button has been moved to the first row of project buttons.
+- The project overview has become a **read-only panel**: the plan and percentage
+  are shown, but cannot be edited from "Overview" (that is the agent's job).
 
-### Исправлено
-- Падение сгенерированных программ: `pygame.event.Event has no attribute 'pos'`
-  — прокрутка колесом мыши в списках больше не приводит к сбою.
-- Падение любой кнопки без явной высоты в приложениях на виджетах движка
-  (именно оно выглядело как «программа не работает, задачи не добавляются»).
-- Одно плохое событие в проекте больше не убивает всё приложение: ошибка
-  логируется, программа продолжает работу.
-- Экспорт в .exe больше не открывает второе сломанное окно «Reasonable Engine»:
-  из сборки исключены редактор и Qt, манифест проекта кладётся рядом с exe.
-- Зависание экспорта на этапе «Копирую проект и движок…» — каждый этап
-  сообщает прогресс.
-- Окно и его размер больше не настраиваются нигде в интерфейсе — их выбирает
-  ИИ-агент под задачу; в экспортированных exe окно корректно читает настройки.
+### Fixed
+- Crash of generated programs: `pygame.event.Event has no attribute 'pos'`
+  — mouse wheel scrolling in lists no longer causes a crash.
+- Crash of any button without an explicit height in engine-widget applications
+  (the one that looked like "the program doesn't work, tasks aren't added").
+- One bad event in a project no longer kills the entire application: the error
+  is logged, and the program keeps running.
+- Export to .exe no longer opens a second broken "Reasonable Engine" window:
+  the editor and Qt are excluded from the build, and the project manifest is
+  placed next to the exe.
+- Export hanging at the "Copying project and engine…" stage — every stage now
+  reports its progress.
+- The window and its size are no longer configured anywhere in the UI — the
+  AI agent chooses them per task; exported exes correctly read the window settings.
 
-### Изменено
-- **Заставка Reasonable Engine** переработана в минималистичном стиле
-  (Unity/Godot): тёмный фон, логотип, тихая подпись, ~1,8 секунды. Заставка
-  стала частью движка: пользователи не могут её отключить или пропустить.
-- Панель внешнего ИИ-агента сокращена до трёх шагов: открыть папку → вставить
-  промпт → смотреть прогресс. Карточки «Команды прогресса» и «Созданные
-  инструкции» удалены.
-- Инструкции и навыки агента переписаны: проект получает только нужные ему
-  навыки (по типу и уровням интерфейса).
+### Changed
+- **The Reasonable Engine splash screen** has been redesigned in a minimalist
+  style (Unity/Godot): dark background, logo, a quiet caption, ~1.8 seconds. The
+  splash is now part of the engine: users cannot disable or skip it.
+- The external AI agent panel has been cut down to three steps: open the folder →
+  paste the prompt → watch the progress. The "Progress commands" and "Created
+  instructions" cards have been removed.
+- Agent instructions and skills have been rewritten: a project receives only the
+  skills it needs (based on its type and interface levels).
 
 [RE-1.01]: ../../releases/tag/RE-1.01
