@@ -4,7 +4,7 @@
 
 ## Installation
 
-1. Download `ReasonableEngine-Setup-RE-2.03.exe` from the
+1. Download `ReasonableEngine-Setup-RE-2.04.exe` from the
    [Releases](../../releases/latest) page.
 2. Run the installer. It will install the editor, a portable Python, and the
    runtime itself — there is nothing extra to install.
@@ -36,8 +36,8 @@ start** (`F1`) or the **Tutorial** button on the start screen.
    - **Advanced (scenes)** — custom graphics, camera, particles: for games.
 5. Set the **project name in Latin characters** — it will become the name of the
    folder and files (for example, `Star Catcher`).
-6. Click **"Create"** — the project will be generated in a few seconds:
-   template, icon, agent instructions, and a progress plan.
+6. Click **"Create"** — the project will be generated in a few seconds as an
+   empty template: the entry point, icon, agent instructions, and a progress plan.
 
 ## Your first launch
 

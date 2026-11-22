@@ -6,6 +6,73 @@ Version format: **RE-<generation>.<release>** — for example RE-2.01, RE-2.02.
 The generation changes only on a major engine overhaul (Reasonable Engine 1 → 2).
 The first release of a generation is always .01; versions like "RE-2.00" do not exist.
 
+## [RE-2.04] — 2026-11-12
+
+### Changed
+- **Prompt cache up to 99%**: the system instruction no longer changes between
+  runs, and project state plus the plan travel in the first user message.
+  History is trimmed in large blocks with message-count headroom, so the prefix
+  stays stable. In the offline benchmark over 200–400 requests the cache share
+  rose from ~50% to 98.5–99%, and the modeled cost dropped 5–10×.
+- **The agent remembers the whole previous run**: the chat now stores the full
+  history including tool calls. The next task continues it instead of starting
+  from a short retelling, so both memory and cache carry over between runs.
+- **The cache share is visible in the counter**: the token-counter tooltip now
+  shows how much of the sent text came from cache.
+- **Agent commands are safe by default**: package installs, network commands,
+  paths outside the project and commands outside the allowlist require
+  confirmation, while destructive system commands are blocked. Agent settings
+  now offer “Safe”, “Trusted” and “Read-only” modes.
+- **Secrets stay out of history and context**: project snapshots no longer copy
+  `.env`, `ai_config.json` or key files, and the saved agent context redacts
+  sensitive tool results. The agent itself cannot read `.env` or
+  `ai_config.json`.
+- **Project files are data, not instructions**: the system prompt now forbids
+  following commands or role changes found in READMEs, comments or tool output.
+- **An empty template instead of ready examples**: creating a game, app, website
+  or universal project no longer adds a demo game, planner, platformer, starter
+  sprites or a prebuilt website page. It creates an empty window or an empty
+  page with an icon and instructions, and the agent builds everything from
+  scratch with its tools and skills.
+
+### Added
+- **Improvement through an external agent**: the “Improve” button in external
+  mode copies a ready audit prompt and asks you to paste it into Claude Code,
+  Codex, Cursor or another agent. The agent studies the project, picks the 3–5
+  highest-impact improvements and implements them.
+- **Unattended mode**: a single agent-settings switch disables every approval
+  for edits and commands. The agent runs without stopping until it finishes or
+  uses its budget; destructive system commands are still blocked.
+- **Skills and tools for full-scale development**: new general skills cover
+  architecture, testing, packaging and release, AI integration, settings and
+  secrets, and localization. The “Other” mode additionally receives PySide6 and
+  a playbook for rebuilding Reasonable Engine itself from scratch. The common
+  tools — copy/move files, create folders, run tests, install dependencies and
+  inspect the environment — are available in every mode: game, app, website and
+  “Other”.
+- **Python check during installation**: the installer verifies the bundled
+  Python and the `pygame`, `Pillow`, `psutil` and `PyInstaller` packages, can
+  install missing packages with pip, and when the portable runtime is missing or
+  broken it downloads the official embeddable Python from python.org and builds
+  the environment. A system Python is detected only as a fallback and is never
+  modified. Without internet the installation still completes; the reason and
+  instructions are saved to `runtime\python-environment.txt`.
+
+### Fixed
+- **Building a game .exe from the installed editor**: the bundled Python now
+  includes PyInstaller and the build runs it instead of launching the editor
+  again. The onedir output (exe inside a subfolder) is found correctly, and
+  `project.json` is copied next to the executable.
+- **Prompt cache in the parallel team**: specialists no longer start every
+  task from a fresh project snapshot or reset history every 36 messages.
+  They share one system prompt, the role rules moved into the task, and the
+  context-saving profile is enabled for specialists too. Long parallel runs
+  should return to 95–99% cache instead of 86%.
+- **No Russian labels in the English UI**: interface levels in the project
+  summary, the convert dialog and a new project's README now follow the chosen
+  language. English mode no longer shows “Продвинутый” or “встроенный”, and the
+  project status says `built-in` instead of the raw `builtin`.
+
 ## [RE-2.03] — 2026-11-08
 
 ### Changed
@@ -435,6 +502,7 @@ The first public release of Reasonable Engine 1.
 - Agent instructions and skills have been rewritten: a project receives only the
   skills it needs (based on its type and interface levels).
 
+[RE-2.04]: ../../releases/tag/RE-2.04
 [RE-2.03]: ../../releases/tag/RE-2.03
 [RE-2.02]: ../../releases/tag/RE-2.02
 [RE-2.01]: ../../releases/tag/RE-2.01

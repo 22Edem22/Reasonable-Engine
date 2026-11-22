@@ -35,6 +35,12 @@ skills: a tkinter utility gets plain-window skills, a game gets scene and
 graphics skills. That way the agent won't drag a game renderer into a utility or
 office forms into a game.
 
+Every project also receives general engineering skills - architecture, testing,
+packaging and release, AI integration, settings and secrets, localization. The
+"Other" mode additionally receives PySide6 and a playbook for rebuilding
+Reasonable Engine itself. The common tools (copy/move, folders, tests,
+dependencies, environment info) are available in every mode.
+
 ## External agent (Claude Code, Cursor, Codex CLI, Cline…)
 
 If the project was created in the "External agent" mode:

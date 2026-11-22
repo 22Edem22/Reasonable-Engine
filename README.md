@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <b>Released version: RE-2.03</b>
+  <b>Released version: RE-2.04</b>
 </p>
 
 <p align="center">
@@ -36,18 +36,20 @@
 ## 📥 Download
 
 The current build is always here: **[Releases](../../releases/latest)** — download
-`ReasonableEngine-Setup-RE-2.03.exe`, run it, and get to work. Installation is simple:
+`ReasonableEngine-Setup-RE-2.04.exe`, run it, and get to work. Installation is simple:
 the engine places the editor, a portable Python, and the runtime itself; there is
-nothing extra to configure. Your projects are stored in the `Projects` folder inside
-the installation and are not removed on update.
+nothing extra to configure. The installer checks Python and the required libraries
+(`pygame`, `Pillow`, `PyInstaller`) and downloads the official Python and packages
+when needed; it never modifies a system Python installation. Your projects are stored
+in the `Projects` folder inside the installation and are not removed on update.
 
-> **Current release — RE-2.03** (released November 8, 2026). Everything described
+> **Current release — RE-2.04** (released November 12, 2026). Everything described
 > below is already part of this released version.
 
 | | |
 |---|---|
 | Platforms | Windows 10/11 (x64), export to Android |
-| UI language | Russian |
+| UI language | Russian, English |
 | Installer size | ~165 MB |
 | License | Proprietary, free to use ([LICENSE.txt](LICENSE.txt)) |
 
@@ -78,6 +80,9 @@ the installation and are not removed on update.
 - **Approval before edits**: agent settings can make the run pause before the
   first edit and ask for permission. Declining returns control without changing
   any file.
+- **Unattended mode**: one switch disables every question before edits and
+  commands. The agent runs without stopping until it finishes or uses its
+  budget; destructive system commands are still blocked.
 - Conversation history is kept per project together with the agent's answers —
   come back a week later and see the whole conversation, not only your own
   messages.
@@ -102,11 +107,14 @@ the installation and are not removed on update.
 
 ### Four development modes
 
-- **Game** and **App** — the engine, scenes and ready widgets.
+- **Game** and **App** — the engine, scenes and the widget toolkit.
 - **Website** — a responsive `site/`, a design system and a standard-library
   Python server. The agent checks links, alt text, titles and responsiveness.
-- **Other** — a universal Python project: CLI, script, bot or service; the agent
-  gets the tools of every mode.
+- **Other** — a universal Python project: CLI, script, bot, service or desktop
+  application; the agent gets the tools of every mode. It also ships skills for
+  architecture, testing, packaging and release, AI integration, settings and
+  secrets, localization, PySide6, plus a playbook for rebuilding Reasonable
+  Engine itself from scratch.
 - New projects run as `python main.py` on Windows and Linux; the Windows/Android
   platform picker is gone. Websites and “Other” projects start without the
   engine splash.
@@ -121,17 +129,15 @@ tools and templates it needs, with nothing extra:
 | **Standard** | Apps and game menus: panels, lists, scrolling, tabs | Ready-made engine widgets |
 | **Advanced** | Games and rich graphics: scenes, camera, particles, animations | Custom renderer on pygame |
 
-### Real examples, not empty stubs
-- **Game**: a title menu, a how-to-play screen, enemy waves, a combo multiplier,
-  an invulnerable dash, four power-ups, procedural sound, a saved high score and a
-  results screen. Controls work with mouse, keyboard and an on-screen joystick.
-  Its starter scene opens in the editor, and markers there define where the
-  player, stars and slimes spawn.
-- **App**: a genuine planner with priorities, tags, search, sorting, weekly
-  statistics, a day streak, undo-delete and a context-aware AI assistant. Data
-  lives in a plain `data.json` next to the project.
-- Both examples run the moment the project is created and are a working base:
-  keep building on them yourself or hand them to the agent as a starting point.
+### An empty template: build everything from scratch
+- A new game, app or website is created empty: a window or a page,
+  `project.json`, an icon, empty folders, one empty scene and agent
+  instructions.
+- No demo menu, planner, platformer, starter sprites or prebuilt website
+  sections. The agent receives only the tools and skills and builds the product
+  for the task; you can write the code yourself from a clean slate.
+- The empty scene opens in the editor, so object placement and spawn points
+  start from a clean canvas.
 
 ### Assets without a designer
 The agent draws any sprite itself — from a pixel grid or vector primitives chosen
@@ -144,13 +150,13 @@ no generic "default character" template.
   handles and zoom with the wheel.
 - **Multiple scenes**: tabs, creating an empty scene, a level, a menu or an app
   screen, duplicating, renaming, deleting, and size/background/grid settings.
-  Apps immediately get a ready screen layout.
+  A new scene can be empty or start from a template.
 - **Inspector right beside it**: position, size, rotation, layer, colour and
   visibility for every object — no hand-editing JSON.
 - **The scene goes straight into the game**: the saved `scenes/main.json` is
   loaded by the `add_scene_objects` call, so the layout from the editor reaches
-  the running project. In the starter game markers define where the player, stars
-  and slimes appear.
+  the running project. Hidden markers can define where characters and items
+  appear.
 
 ### Export
 - **Windows folder** — a self-contained folder with `Play.bat` and the engine built in.
@@ -187,7 +193,7 @@ Reasonable Engine uses **two-level** numbering:
   **RE 2**). It changes only when the engine undergoes a global shift: a new
   architecture, a new project format, backward-incompatible changes.
 - **Release** — a specific build within a generation: **RE-2.01**, **RE-2.02**,
-  **RE-2.03**…
+  **RE-2.03**, **RE-2.04**…
 
 Rules:
 
@@ -200,7 +206,7 @@ Rules:
    begins with RE-3.01, then RE-3.02…RE-3.12, and so on.
 4. A generation never "rolls back": Reasonable Engine 2 cannot ship an RE-1.xx
    release, and RE 1 cannot ship an RE-2.xx release.
-5. The current **released** version is **RE-2.03**. The live status is always shown
+5. The current **released** version is **RE-2.04**. The live status is always shown
    in the header of [CHANGELOG.md](CHANGELOG.md) and in the editor's "About" window.
 
 ## 🖥 System Requirements
